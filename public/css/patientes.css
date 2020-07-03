@@ -1,0 +1,45 @@
+.container-pat
+{
+    display: grid;
+    grid-template-columns: 50% 50%  ;
+}
+.container
+{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.container h1
+{
+    width: 100%;
+    background-color: rgb(170, 170, 251);
+    height: 5rem;
+    padding: 10px;
+}
+.card
+{
+    border: solid 1px black;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+.img
+{
+    padding: 10px;
+}
+.container .ref
+{
+    background-color: rgb(170, 170, 251);
+    width: 100%;
+    height: 4rem;
+    font-size: 2rem;
+    text-align: center;
+}
+.container .ref span
+{
+    padding: 5px;
+}
