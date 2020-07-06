@@ -4,7 +4,8 @@ require '../elements/header.php';?>
 <?php require "../vendor/autoload.php";
 use App\Database;
 use App\User;
-
+// dd($_SESSION);
+// exit();
 $_SESSION['user'] = $user->id;
 
 $db = new Database();
@@ -20,7 +21,7 @@ while ($donnee = $query->fetch()) {
          <div class="img">
             <img src="<?php echo $donnee['lien_img'] ?>" alt="" width="400px" height="400px">
 
-         <a class="ref" href="/home?id=<?=$donnee['id']?>"><span><?=$donnee['username']?></span></a>
+         <a class="ref" href="/home?id=<?=$donnee['id']?>&med=<?=$_SESSION['user']?>"><span><?=$donnee['username']?></span></a>
      </div>
 <?php }?>
     </div></div>

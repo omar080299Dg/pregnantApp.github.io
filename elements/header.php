@@ -1,7 +1,4 @@
-<?php 
-session_start();
- 
-?>
+<?php session_start();?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -104,13 +101,13 @@ session_start();
                                         <li><a href="/contact">Contact</a></li>
 
                                     </ul>
-                                   
+
                                 </nav>
-                                
+
 
                             </div>
-                           
- 
+
+
 
 
                         </div>

@@ -1,16 +1,20 @@
 
  <?php
- require '../elements/header.php'; 
- use App\Database;
-use App\User;
-
 require "../vendor/autoload.php";
+require '../elements/header.php';
 
- $query = Database::getPDO("pregnantApp")->prepare("SELECT * FROM Users WHERE id=:id");
-        $query->execute(['id' => $_SESSION["user"]]);
-        $user = $query->fetchObject(User::class);
- 
- if ($user->statut == "medecin"): ?>
+//  dd($_SESSION);
+//  exit();
+
+use App\Database;
+use App\User;
+if(isset($_GET['med'])){ 
+$med= $_GET['med'];
+$query = Database::getPDO("pregnantApp")->prepare("SELECT * FROM Users WHERE id=:id");
+$query->execute(['id' => $med]);
+$user = $query->fetchObject(User::class);
+
+if ($user->statut == "medecin"): ?>
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
@@ -18,7 +22,7 @@ require "../vendor/autoload.php";
                                 </div>
                             </div>
                         </div>
-                        <?php endif;?>
+                        <?php endif; }?>
     <div class="slider_area">
         <div class="slider_active owl-carousel">
             <div class="single_slider  d-flex align-items-center slider_bg_2">
