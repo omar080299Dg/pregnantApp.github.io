@@ -1,5 +1,5 @@
 <?php
-// session_start();
+ session_start();
 $errors = [];
 use App\Authentification;
 use App\Database;
@@ -15,11 +15,11 @@ if (!empty($_POST['username']) && isset($_POST['password']) && isset($_POST['sta
 
        
         if($_POST['statut']=='patient')
-        {
+        {   $_SESSION['user'] = $user->id;
         require '../public/home.php';
         }
         else
-        {
+        { $_SESSION['user'] = $user->id;
           require '../public/patientes.php';
         }
     } else {

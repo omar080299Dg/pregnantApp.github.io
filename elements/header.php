@@ -1,4 +1,4 @@
-<?php session_start();?>
+ 
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -8,7 +8,7 @@
 	<title>Pregnatn App</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<!-- <link rel="manifest" href="site.webmanifest"> -->
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 	<!-- Place favicon.ico in the root directory -->

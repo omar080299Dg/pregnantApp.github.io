@@ -3,11 +3,11 @@
 require "../vendor/autoload.php";
 require '../elements/header.php';
 
-//  dd($_SESSION);
-//  exit();
+
 
 use App\Database;
 use App\User;
+
 if(isset($_GET['med'])){ 
 $med= $_GET['med'];
 $query = Database::getPDO("pregnantApp")->prepare("SELECT * FROM Users WHERE id=:id");
@@ -107,14 +107,19 @@ if ($user->statut == "medecin"): ?>
                         <a href="#" class="boxed-btn3-white">+10 672 356 3567</a>
                     </div>
                 </div>
+                
                 <div class="col-xl-4 col-md-4">
                     <div class="single_service">
                         <div class="icon">
                             <i class="flaticon-first-aid-kit"></i>
                         </div>
-                        <h3>Chamber Service</h3>
-                        <p>Clinical excellence must be the priority for any health care service provider.</p>
-                        <a href="#" class="boxed-btn3-white">Make an Appointment</a>
+                        <h3>Infomations personnelles</h3>
+                        <p></p>
+                        <?php if(isset($_GET['id'])) {?>
+                        <a href="/info?id=<?= $_GET['id']?>" class="boxed-btn3-white">Afficher</a>
+                        <?php } else {?>
+                            <a href="/info" class="boxed-btn3-white">Afficher</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

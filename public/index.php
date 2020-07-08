@@ -9,6 +9,8 @@ $router->map('GET', '/', 'login');
 $router->map('GET', '/home', 'home');
 // $router->map('GET', '/homeP', 'homeP');
 $router->map('GET', '/contact', 'contact');
+$router->map('GET | POST', '/addInfo', 'addInfo');
+$router->map('GET', '/info', 'info');
 $router->map('POST | GET', '/signIn', 'signIn');
 $router->map('POST | GET', '/signUp', 'signUp');
 $router->map('GET', '/test', 'test');
@@ -35,9 +37,15 @@ if ($match !== null) {
         require "{$match['target']}.php";
     } elseif ($match['target'] === 'elements') {
         require "{$match['target']}.php";
+    }
+    elseif ($match['target'] === 'addInfo') {
+        require "{$match['target']}.php";
     } elseif ($match['target'] === 'single-blog') {
         require "{$match['target']}.php";
-    } elseif ($match['target'] === 'blog') {
+    } 
+    elseif ($match['target'] === 'info') {
+        require "{$match['target']}.php";
+    }elseif ($match['target'] === 'blog') {
         require "{$match['target']}.php";
     } elseif ($match['target'] === 'home') {
         require "{$match['target']}.php";
