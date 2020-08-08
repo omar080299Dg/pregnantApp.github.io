@@ -3,11 +3,9 @@
 require "../vendor/autoload.php";
 require '../elements/header.php';
 
-
-
 use App\Database;
 use App\User;
-
+use App\Appointement;
 if(isset($_GET['med'])){ 
 $med= $_GET['med'];
 $query = Database::getPDO("pregnantApp")->prepare("SELECT * FROM Users WHERE id=:id");
@@ -92,9 +90,9 @@ if ($user->statut == "medecin"): ?>
                         <div class="icon">
                             <i class="flaticon-electrocardiogram"></i>
                         </div>
-                        <h3>Hospitality</h3>
+                        <h3>Méteo</h3>
                         <p>Clinical excellence must be the priority for any health care service provider.</p>
-                        <a href="#" class="boxed-btn3-white">Apply For a Bed</a>
+                        <a href="/indexM" class="boxed-btn3-white">check</a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
@@ -626,43 +624,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <form id="test-form" class="white-popup-block mfp-hide" method="POST"  ">
         <div class="popup_box ">
             <div class="popup_inner">
                 <h3>Make an Appointment</h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-6">
-                            <input id="datepicker" placeholder="Pick date">
+                            <input  name="dateApp" id="datepicker" placeholder="Pick date">
                         </div>
                         <div class="col-xl-6">
-                            <input id="datepicker2" placeholder="Suitable time">
+                            <input id=""  name="timeApp"type="text" placeholder="Suitable time">
+                        </div>
+                      
+                         
+                        <div class="col-xl-6">
+                            <input type="text"  name="nameApp" placeholder="Name">
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
-                                <option data-display="Select Department">Department</option>
-                                <option value="1">Eye Care</option>
-                                <option value="2">Physical Therapy</option>
-                                <option value="3">Dental Care</option>
-                            </select>
+                            <input type="text"  name="descApp" placeholder="Description">
                         </div>
-                        <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
-                                <option data-display="Doctors">Doctors</option>
-                                <option value="1">Mirazul Alom</option>
-                                <option value="2">Monzul Alom</option>
-                                <option value="3">Azizul Isalm</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-6">
-                            <input type="text"  placeholder="Name">
-                        </div>
-                        <div class="col-xl-6">
-                            <input type="text"  placeholder="Phone no.">
-                        </div>
-                        <div class="col-xl-12">
-                            <input type="email"  placeholder="Email">
-                        </div>
+                      
                         <div class="col-xl-12">
                             <button type="submit" class="boxed-btn3">Confirm</button>
                         </div>
@@ -673,4 +655,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </form>
     <!-- form itself end -->
 
-    <?php require "../elements/footer.php";?>
+    <?php
+    if($_POST){ 
+    $pdo = Database::getPDO("pregnantApp");
+    $appoitement = new Appointement($pdo);
+    $id_pat=$_GET['med'];
+    $appoitement->makeAppointement($_POST['nameApp'],$_POST['dateApp'],$id_pat,$_POST['timeApp'],$_POST['descApp']);}
+     require "../elements/footer.php";?>

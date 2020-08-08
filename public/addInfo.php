@@ -63,5 +63,5 @@ if(!empty($_POST))
     $pdo = $bd->getPDO("pregnantApp");
     $query=$pdo->prepare(" INSERT INTO infos_perso SET id_user=?, nom_patient=?,prenom_patient=?,age_patient=?, proffession_patient=?,ethenie_patient=?,addresse_patiente=?,date_naissance=?,lieu_naissance=?,tel_patiente=?,num_urg=?");
     $query->execute([$id,$_POST['nom'],$_POST['prenom'],$_POST['age'],$_POST['profession'],$_POST['ethenie'],$_POST['addresse'],$_POST['date'],$_POST['lieu'],$_POST['tel'],$_POST['telurg']]);
-    require 'info.php';
+    
 }

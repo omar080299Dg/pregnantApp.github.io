@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(session_status()==PHP_SESSION_NONE)
+{
+  session_start();
+}
 require "../vendor/autoload.php";
 require '../elements/header.php';
 use App\Database;
@@ -24,7 +27,7 @@ $user = $query->fetchObject(User::class);
     $pdo = $bd->getPDO("pregnantApp");
     $query = $pdo->prepare(" SELECT * FROM infos_perso WHERE id_user=:id");
     $query->execute(["id" => $id]);
-    $pat = $query->fetchAll();
+    $pat = $query->fetch ();
 } elseif ($user->statut == "patient") {
     $id = $_SESSION['user'];
     $bd = new Database();
@@ -33,7 +36,9 @@ $user = $query->fetchObject(User::class);
     $query->execute(["id" => $id]);
     $pat = $query->fetch();
 }
+  
  ?>
+<?php if(!empty($pat)): ?>
 <div class="container">
 <table class="table table-bordered table-dark">
   <thead>
@@ -78,24 +83,35 @@ $user = $query->fetchObject(User::class);
       <th scope="row">Numéro d'urgnce</th>
       <td><?= $pat['num_urg']?> </td>
     </tr>
-    
+ <?php endif; ?>
 
   </tbody>
 </table>
-<?php if($user->statut=="medecin"){?>
-<div style="display: flex; justify-content:space-between">
-<?php if($pat!=null){?>
-    <a href="/addInfo?id=<?=$_GET['id'] ?>" class="btn btn-primary disabled">nouveau</a>
-<?} else{?>
-    <a href="/addInfo?id=<?=$_GET['id'] ?>" class="btn btn-primary  ">nouveau</a>
-<?php } ?>
-<a href="#" class="btn btn-danger">modifier</a>
-</div>
-<?php }
-elseif($user->statut=="patient"){?>
-<div style="display: flex; justify-content:space-between">
+<?php if($user->statut=="medecin"){ 
+ 
+  if(!empty($pat)){ ?>
+
+
+    <a href="/modifyDocperso?id=<?=$_GET['id'] ?>" class="btn btn-danger">modifier</a>
+  <?php } else{ ?>
+ <h1 class=" container alter altert-primary-center"> Veillez remplir les informations de la patiente</h1>
+     <a href="/addInfo?id=<?=$_GET['id'] ?>" class= "   btn btn-primary  ">nouveau</a>
+  <?php } }
+   ?>
+ 
+ <?php if($user->statut=="patient"):
+   if(!empty($pat)){ ?>
+   <div style="display: flex; justify-content:space-between">
 <a href="/addInfo" class="btn btn-primary disabled"  disabled="disabled">nouveau</a>
-<a href="#" class="btn btn-danger disabled" disabled="disabled">modifier</a>
+<a href="/modifyDocperso" class="btn btn-danger disabled" disabled="disabled">modifier</a>
 </div>
-<?php }?>
-</div>
+<?php } else{ ?>
+  <h1 class=" container alter altert-primary-center"> Veillez  contacter votre medecin pour le remplissage </h1>
+
+  <?php }  endif;
+   ?>
+
+
+
+
+

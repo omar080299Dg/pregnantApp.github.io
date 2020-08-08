@@ -1,0 +1,137 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    max-height: 100vh;
+   
+    background-image: linear-gradient(rgb(75, 86, 180), rgb(81, 101, 212));
+    color: white;
+    font-family: sans-serif;
+}
+.container
+{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.app-title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.app-title p
+{
+    font-size: 5rem;
+    font-family: sans-serif;
+    color: orange;
+}
+.notification
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.weather-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-direction: column;
+}
+.weather-icon{
+    width: 150px;
+    height: 150px;
+}
+
+.weather-icon img{
+    display: block;
+    margin: 0 auto;
+}
+
+.temperature-value{
+    width: 300px;
+    height:60px;
+}
+
+.temperature-value p{
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    font-size: 5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.temperature-value p:hover{
+    
+}
+
+.temperature-value span{
+    color: #ffffff;
+    font-size: 0.5em;
+}
+
+.temperature-description{
+    margin-top: 10px;
+}
+
+.temperature-description p{
+    padding: 8px;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.location{
+    
+}
+
+.location p{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.messages-container
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(24, 24, 73);
+   
+     
+
+}
+.message-title
+{
+    height: 50px;
+    width: 100%;
+    background-color:rgb(211, 138, 3);
+}.messages-container span, i
+{
+    padding: 7px;
+}
+.messages-container span
+{
+   font-size: 2rem;
+   margin-left: 5px;
+}
+.message-content
+{
+    padding: 25px;
+}
+.message-content strong
+{
+    color: orange;
+}
+
+

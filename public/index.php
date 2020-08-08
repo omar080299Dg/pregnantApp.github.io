@@ -6,8 +6,10 @@ $whoops->register();
 $router = new AltoRouter();
 $router->map('GET', '/', 'login');
 // composer
-$router->map('GET', '/home', 'home');
-// $router->map('GET', '/homeP', 'homeP');
+$router->map('GET | POST' , '/home', 'home');
+$router->map('GET', '/indexM', 'indexM');
+ 
+ $router->map('GET | POST', '/modifyDocperso', 'modifyDocperso');
 $router->map('GET', '/contact', 'contact');
 $router->map('GET | POST', '/addInfo', 'addInfo');
 $router->map('GET', '/info', 'info');
@@ -49,32 +51,21 @@ if ($match !== null) {
         require "{$match['target']}.php";
     } elseif ($match['target'] === 'home') {
         require "{$match['target']}.php";
-    // } elseif ($match['target'] === 'homeP') {
-    //     require "{$match['target']}.php";
-    // } elseif ($match['target'] === 'signUp') {
-    //     require "{$match['target']}.php";
-    // } elseif ($match['target'] === 'home') {
-        // require "../login/{$match['target']}.php";
-    } elseif ($match['target'] === null) {
+ 
+    }
+     
+    elseif ($match['target'] === 'modifyDocperso') {
+        require "{$match['target']}.php";
+ 
+    } 
+    elseif ($match['target'] === 'indexM') {
+        require "{$match['target']}.php";
+ 
+    }elseif ($match['target'] === null) {
         require 'error.php';
-    } else {
+    }
+     else {
         require "../login/{$match['target']}.php";
     }
 }
-
-// if ($match !== null) {
-//    $target=$match['target'];
-//    switch ($target) {
-//        case 'home':
-//         require "{$match['target']}.php";
-//            break;
-//            case empty($match['target']):
-//             require "error.php";
-//                break;
-
-//        default:
-//        require "../login/login.php";
-//            break;
-//    }
-
-// }
+ 
