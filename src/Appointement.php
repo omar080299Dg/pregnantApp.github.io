@@ -10,4 +10,5 @@ class Appointement{
         $query->execute([$nom,$dateAp,$id_pat,$heures,$description]);
 
     }
+   
 }

@@ -8,7 +8,7 @@ $router->map('GET', '/', 'login');
 // composer
 $router->map('GET | POST' , '/home', 'home');
 $router->map('GET', '/indexM', 'indexM');
- 
+$router->map('GET', '/checkApp', 'checkApp');
  $router->map('GET | POST', '/modifyDocperso', 'modifyDocperso');
 $router->map('GET', '/contact', 'contact');
 $router->map('GET | POST', '/addInfo', 'addInfo');
@@ -59,6 +59,10 @@ if ($match !== null) {
  
     } 
     elseif ($match['target'] === 'indexM') {
+        require "{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'checkApp') {
         require "{$match['target']}.php";
  
     }elseif ($match['target'] === null) {

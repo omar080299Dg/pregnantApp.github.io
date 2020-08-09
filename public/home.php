@@ -2,7 +2,7 @@
  <?php
 require "../vendor/autoload.php";
 require '../elements/header.php';
-
+ 
 use App\Database;
 use App\User;
 use App\Appointement;
@@ -35,8 +35,9 @@ if ($user->statut == "medecin"): ?>
 
 
 
-                                         <a class="  boxed-btn3" href="#test-form">check Appointment</a>
-
+                                    <?php if(isset($_GET['id'])) {?>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -52,7 +53,9 @@ if ($user->statut == "medecin"): ?>
                                 <p>In healthcare sector, service excellence is the facility of <br> the hospital as
                                     healthcare service provider to consistently.</p>
 
-                                    <a class="  boxed-btn3" href="#test-form">check Appointment</a>
+                                    <?php if(isset($_GET['id'])) {?>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <?php }?>
 
 
 
@@ -71,7 +74,9 @@ if ($user->statut == "medecin"): ?>
                                     For Hole Family </h3>
                                 <p>In healthcare sector, service excellence is the facility of <br> the hospital as
                                     healthcare service provider to consistently.</p>
-                                <a href="#" class="boxed-btn3">Check an  Appointment </a>
+                                    <?php if(isset($_GET['id'])) {?>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -659,6 +664,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     if($_POST){ 
     $pdo = Database::getPDO("pregnantApp");
     $appoitement = new Appointement($pdo);
-    $id_pat=$_GET['med'];
+    $id_pat=$_GET['id'];
     $appoitement->makeAppointement($_POST['nameApp'],$_POST['dateApp'],$id_pat,$_POST['timeApp'],$_POST['descApp']);}
      require "../elements/footer.php";?>
