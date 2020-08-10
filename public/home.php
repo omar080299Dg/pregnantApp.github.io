@@ -37,7 +37,10 @@ if ($user->statut == "medecin"): ?>
 
                                     <?php if(isset($_GET['id'])) {?>
                                 <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
-                                <?php }?>
+                                <?php } 
+                               else {?>
+                            <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                        <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -55,7 +58,9 @@ if ($user->statut == "medecin"): ?>
 
                                     <?php if(isset($_GET['id'])) {?>
                                 <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
-                                <?php }?>
+                                <?php }  else {?>
+                                    <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                        <?php } ?>
 
 
 
@@ -76,7 +81,9 @@ if ($user->statut == "medecin"): ?>
                                     healthcare service provider to consistently.</p>
                                     <?php if(isset($_GET['id'])) {?>
                                 <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
-                                <?php }?>
+                                <?php }  else {?>
+                                    <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                        <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -661,7 +668,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- form itself end -->
 
     <?php
-    if($_POST){ 
+    if($_POST && isset($_GET['id'])){ 
     $pdo = Database::getPDO("pregnantApp");
     $appoitement = new Appointement($pdo);
     $id_pat=$_GET['id'];
