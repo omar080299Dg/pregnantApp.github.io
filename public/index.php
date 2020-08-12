@@ -22,6 +22,7 @@ $router->map('GET', '/Department', 'Department');
 $router->map('GET', '/elements', 'elements');
 $router->map('GET', '/blog', 'blog');
 $router->map('GET', '/single-blog', 'single-blog');
+$router->map('GET | POST', '/biochimie', 'biochimie');
 $router->map('GET', '/passRegeneration', 'passRegeneration');
 $match = $router->match();
 if ($match !== null) {
@@ -64,6 +65,10 @@ if ($match !== null) {
     }
     elseif ($match['target'] === 'checkApp') {
         require "{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'biochimie') {
+        require "analyse/{$match['target']}.php";
  
     }elseif ($match['target'] === null) {
         require 'error.php';

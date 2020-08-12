@@ -190,9 +190,9 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/1.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Eye Care</a></h3>
+                            <h3><a href="/biochimie">Biochimie</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/biochimie" class="learn_more">Learn More</a>
                         </div>
                     </div>
                 </div>
