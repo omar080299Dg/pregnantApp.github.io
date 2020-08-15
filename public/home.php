@@ -190,9 +190,16 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/1.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="/biochimie">Biochimie</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/biochimie?id=<?= $_GET['id']?>">Biochimie</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/biochimie?id=<?= $_GET['id']?>" class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/biochimie">Biochimie</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
                             <a href="/biochimie" class="learn_more">Learn More</a>
+                            <?php } ?>
+                            
                         </div>
                     </div>
                 </div>

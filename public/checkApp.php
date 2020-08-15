@@ -1,32 +1,8 @@
 <?php
-
-
- 
-// $to      = '99omar.niang@gmail.com';
-// $subject = 'the subject';
-// $message = 'hello';
-// $headers = 'From: 99omar.niang@gmail.com' . "\r\n" .
-//     'Reply-To: 99omar.niang@gmail.com' . "\r\n" .
-//     'X-Mailer: PHP/' . phpversion();
-
-// mail($to, $subject, $message, $headers);
-//  exit();
-
-
-
-
-
 if(session_status()==PHP_SESSION_NONE)
 {
   session_start();
 }
-
-// $datetime1 = date_create(date('d/m/Y')); // Date fixe
-// $datetime2 = date_create('2018/08/17'); // Date fixe
-// $interval = date_diff($datetime1, $datetime2);
-// echo $interval->format('%R%a jours');
-
- 
 require "../vendor/autoload.php";
 require '../elements/header.php';
  
