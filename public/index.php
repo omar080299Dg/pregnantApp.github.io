@@ -23,6 +23,11 @@ $router->map('GET', '/elements', 'elements');
 $router->map('GET', '/blog', 'blog');
 $router->map('GET', '/single-blog', 'single-blog');
 $router->map('GET | POST', '/biochimie', 'biochimie');
+$router->map('GET | POST', '/hemobiologie', 'hemobiologie');
+$router->map('GET | POST', '/serologie', 'serologie');
+$router->map('GET | POST', '/hemoglobine', 'hemoglobine');
+$router->map('GET | POST', '/segmentation', 'segmentation');
+$router->map('GET | POST', '/parasitologie', 'parasitologie');
 $router->map('GET', '/passRegeneration', 'passRegeneration');
 $match = $router->match();
 if ($match !== null) {
@@ -46,6 +51,9 @@ if ($match !== null) {
     } elseif ($match['target'] === 'single-blog') {
         require "{$match['target']}.php";
     } 
+    elseif ($match['target'] === 'hemobiologie') {
+        require "analyse/{$match['target']}.php";
+    }
     elseif ($match['target'] === 'info') {
         require "{$match['target']}.php";
     }elseif ($match['target'] === 'blog') {
@@ -68,6 +76,22 @@ if ($match !== null) {
  
     }
     elseif ($match['target'] === 'biochimie') {
+        require "analyse/{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'segmentation') {
+        require "analyse/{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'serologie') {
+        require "analyse/{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'hemoglobine') {
+        require "analyse/{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'parasitologie') {
         require "analyse/{$match['target']}.php";
  
     }elseif ($match['target'] === null) {

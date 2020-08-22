@@ -209,9 +209,15 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/2.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Physical Therapy</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/hemobiologie?id=<?= $_GET['id']?>">hemobiologie</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/hemobiologie?id=<?= $_GET['id']?>" class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/hemobiologie">hemobiologie</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/hemobiologie" class="learn_more">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -221,9 +227,15 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/3.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Dental Care</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/serologie?id=<?= $_GET['id']?>">Serologie</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/serologie?id=<?= $_GET['id']?>" class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/serologie">Serologie</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/serologie" class="learn_more">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -233,9 +245,15 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/4.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Diagnostic Test</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/hemoglobine?id=<?= $_GET['id']?>">Hémoglobine</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/hemoglobine?id=<?= $_GET['id']?>" class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/hemoglobine">Hémoglobine</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/hemoglobine" class="learn_more">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -245,9 +263,15 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/5.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Skin Surgery</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/segmentation?id=<?= $_GET['id']?>">Vitesse de segmantation</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/segmentation?id=<?= $_GET['id']?>" class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/segmentation">Vitesse de segmantation</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/segmentation" class="learn_more">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -257,9 +281,15 @@ if ($user->statut == "medecin"): ?>
                             <img src="img/department/6.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">Surgery Service</a></h3>
+                        <?php if(isset($_GET['id'])) {?>
+                            <h3><a href="/parasitologie?id=<?= $_GET['id']?> ">Parasitoligie</a></h3>
                             <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/parasitologie/?id=<?= $_GET['id']?> " class="learn_more">Learn More</a>
+                            <?php } else {?>
+                                <h3><a href="/parasitologie">Parasitoligie</a></h3>
+                            <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                            <a href="/parasitologie " class="learn_more">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
