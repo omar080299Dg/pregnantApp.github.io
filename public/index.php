@@ -28,6 +28,7 @@ $router->map('GET | POST', '/serologie', 'serologie');
 $router->map('GET | POST', '/hemoglobine', 'hemoglobine');
 $router->map('GET | POST', '/segmentation', 'segmentation');
 $router->map('GET | POST', '/parasitologie', 'parasitologie');
+$router->map('GET | POST', '/emergency', 'emergency');
 $router->map('GET', '/passRegeneration', 'passRegeneration');
 $match = $router->match();
 if ($match !== null) {
@@ -66,7 +67,11 @@ if ($match !== null) {
     elseif ($match['target'] === 'modifyDocperso') {
         require "{$match['target']}.php";
  
-    } 
+    }
+    elseif ($match['target'] === 'emergency') {
+        require "{$match['target']}.php";
+ 
+    }
     elseif ($match['target'] === 'indexM') {
         require "{$match['target']}.php";
  

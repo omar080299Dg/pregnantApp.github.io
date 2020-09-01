@@ -112,9 +112,9 @@ if ($user->statut == "medecin"): ?>
                         <div class="icon">
                             <i class="flaticon-emergency-call"></i>
                         </div>
-                        <h3>Emergency Care</h3>
-                        <p>Clinical excellence must be the priority for any health care service provider.</p>
-                        <a href="#" class="boxed-btn3-white">+10 672 356 3567</a>
+                        <h3>Emergency </h3>
+                        <p>Clique et envoie un message d'urgence</p>
+                        <a href="/emergency" class="boxed-btn3-white">+10 672 356 3567</a>
                     </div>
                 </div>
                 

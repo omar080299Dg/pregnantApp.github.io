@@ -65,7 +65,7 @@ $user = $query->fetchObject(User::class);
 if ($int<= 10 && $int>=5 ) {
     $theme= "bg-warning";
 }
-elseif ($int<= 5   ) {
+elseif ($int<= 5  && $int>0 ) {
     $theme= "bg-danger";
     $to      = '99omar.niang@gmail.com';
 $subject = 'the subject';
@@ -75,18 +75,24 @@ $headers = 'From: 99omar.niang@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);
-}else {
+}elseif ($int<=0) {
+  $theme= "bg-dark mb-3";
+  $int=0;
+
+}
+else {
     $theme= "bg-success";
 }
      ?>
- 
+
   
  <div class="card text-white <?= $theme ?> mb-3" style="max-width: 18rem;">
-  <div class="card-header">le <?=$donne['dateAp'] ?> à <?=$donne['heures'] ?>   <?=$int ?> jours</div>
+  <div class="card-header">le <?= date('d/m/y',strtotime($donne['dateAp'] ))?> à <?=$donne['heures'] ?>  </div>
   <div class="card-body">
-    <h5 class="card-title"><?=$donne['nom'] ?></h5>
+    <h5 class="card-title text-bold "><?=$donne['nom'] ?></h5>
     <p class="card-text text-white "><?=$donne['description'] ?></p>
   </div>
+     <span> Il vous reste <?=$int ?> jours</span>
   </div>
  
  <?php }   ?>
