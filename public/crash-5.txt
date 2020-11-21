@@ -1,20 +1,20 @@
-date/time         : 2020-10-26, 10:26:20, 317ms
+date/time         : 2020-10-19, 10:41:08, 500ms
 computer name     : DESKTOP-8IGV5DG
 user name         : Dell
 registered owner  : Utilisateur Windows
 operating system  : Windows NT New x64 build 9200
 system language   : French
-system up time    : 2 days 11 hours
+system up time    : 1 day 21 hours
 program up time   : 1 second
 processors        : 4x Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
-physical memory   : 3230/8098 MB (free/total)
-free disk space   : (C:) 27,17 GB
+physical memory   : 4025/8098 MB (free/total)
+free disk space   : (C:) 28,76 GB
 display mode      : 1366x768, 32 bit
-process id        : $644
-allocated memory  : 17,64 MB
+process id        : $3adc
+allocated memory  : 17,75 MB
 command line      : "C:\wamp64\sendmail\sendmail.exe" -t
 executable        : sendmail.exe
-exec. date/time   : 2011-06-18 00:10
+exec. date/time   : 2011-06-18 01:10
 compiled with     : Delphi 2006/07
 madExcept version : 3.0l
 callstack crc     : $1d5da2f6, $4127c0d0, $4127c0d0
@@ -22,7 +22,7 @@ exception number  : 1
 exception class   : EIdSocketError
 exception message : Socket Error # 10054 Connection reset by peer.
 
-main thread ($1e20):
+main thread ($1484):
 00435e23 +0073 sendmail.exe IdStack                         706  +42 TIdStack.RaiseSocketError
 00435daa +0016 sendmail.exe IdStack                         660   +1 TIdStack.RaiseLastSocketError
 0045f2e8 +0100 sendmail.exe IdSSLOpenSSLHeaders           16464  +22 EIdOpenSSLAPISSLError.RaiseExceptionCode
@@ -37,37 +37,37 @@ main thread ($1e20):
 00445cc8 +00a4 sendmail.exe IdExplicitTLSClientServerBase   257  +23 TIdExplicitTLSClient.Connect
 0045ab7b +0017 sendmail.exe IdSMTP                          373   +2 TIdSMTP.Connect
 004b5f14 +1060 sendmail.exe sendmail                        808 +326 initialization
-77576357 +0017 KERNEL32.DLL                                          BaseThreadInitThunk
+75ba6357 +0017 KERNEL32.DLL                                          BaseThreadInitThunk
 
-thread $1a2c:
-77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
+thread $3038:
+75ba6357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
-thread $2460:
-77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
+thread $1ac4:
+75ba6357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
-thread $2570:
-77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
+thread $286c:
+75ba6357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
 stack dump:
 0019fb90  28 5e 43 00 de fa ed 0e - 01 00 00 00 07 00 00 00  (^C.............
-0019fba0  a4 fb 19 00 28 5e 43 00 - d0 cd c1 00 ec 28 43 00  ....(^C......(C.
-0019fbb0  c0 3f 46 00 c8 1d c3 00 - e0 fb 19 00 c0 fb 19 00  .?F.............
+0019fba0  a4 fb 19 00 28 5e 43 00 - d0 cd 4a 02 ec 28 43 00  ....(^C...J..(C.
+0019fbb0  c0 3f 46 00 c8 1d 4c 02 - e0 fb 19 00 c0 fb 19 00  .?F...L.........
 0019fbc0  f4 fb 19 00 c8 4b 40 00 - e0 fb 19 00 05 00 00 00  .....K@.........
-0019fbd0  00 00 00 00 00 00 00 00 - 46 27 00 00 00 4f c1 00  ........F'...O..
-0019fbe0  ec fb 19 00 ad 5d 43 00 - 00 4f c1 00 d4 fc 19 00  .....]C..O......
+0019fbd0  00 00 00 00 00 00 00 00 - 46 27 00 00 00 4f 4a 02  ........F'...OJ.
+0019fbe0  ec fb 19 00 ad 5d 43 00 - 00 4f 4a 02 d4 fc 19 00  .....]C..OJ.....
 0019fbf0  ed f2 45 00 f8 fc 19 00 - c8 4b 40 00 d4 fc 19 00  ..E......K@.....
-0019fc00  a8 e8 ba 03 ff ff ff ff - c0 3f 46 00 00 00 00 00  .........?F.....
+0019fc00  18 37 b9 03 ff ff ff ff - c0 3f 46 00 00 00 00 00  .7.......?F.....
 0019fc10  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019fc20  68 43 bb 03 60 00 00 00 - 6d 43 bb 03 a8 e8 ba 03  hC..`...mC......
-0019fc30  75 f2 00 12 a8 e8 ba 03 - 16 00 00 00 08 ee ba 03  u...............
-0019fc40  5b 00 00 00 00 00 00 00 - 01 00 00 00 a8 e8 ba 03  [...............
-0019fc50  16 00 00 00 08 ee ba 03 - a8 e8 ba 03 5b 00 00 00  ............[...
-0019fc60  00 00 00 00 00 00 00 00 - d8 ea ba 03 08 ee ba 03  ................
-0019fc70  5b 00 00 00 6b 43 bb 03 - 40 f3 00 12 00 00 00 00  [...kC..@.......
-0019fc80  16 00 00 00 08 ee ba 03 - 5b 00 00 00 08 ee ba 03  ........[.......
-0019fc90  5d ee ba 03 00 00 00 00 - 8a 86 00 12 a8 e8 ba 03  ]...............
-0019fca0  16 00 00 00 00 00 00 00 - a8 e8 ba 03 00 00 00 00  ................
-0019fcb0  10 11 00 00 08 ee ba 03 - f5 d5 01 12 70 36 ba 03  ............p6..
+0019fc20  28 42 ba 03 60 00 00 00 - 2d 42 ba 03 18 37 b9 03  (B..`...-B...7..
+0019fc30  75 f2 00 12 18 37 b9 03 - 16 00 00 00 c8 ec b9 03  u....7..........
+0019fc40  5b 00 00 00 00 00 00 00 - 01 00 00 00 18 37 b9 03  [............7..
+0019fc50  16 00 00 00 c8 ec b9 03 - 18 37 b9 03 5b 00 00 00  .........7..[...
+0019fc60  00 00 00 00 00 00 00 00 - 98 e9 b9 03 c8 ec b9 03  ................
+0019fc70  5b 00 00 00 2b 42 ba 03 - 40 f3 00 12 00 00 00 00  [...+B..@.......
+0019fc80  16 00 00 00 c8 ec b9 03 - 5b 00 00 00 c8 ec b9 03  ........[.......
+0019fc90  1d ed b9 03 00 00 00 00 - 8a 86 00 12 18 37 b9 03  .............7..
+0019fca0  16 00 00 00 00 00 00 00 - 18 37 b9 03 00 00 00 00  .........7......
+0019fcb0  10 11 00 00 c8 ec b9 03 - f5 d5 01 12 88 9d ca 03  ................
 0019fcc0  04 00 00 00 00 00 00 00 - ff ff ff ff 00 00 00 00  ................
 
 disassembling:

@@ -1,80 +1,86 @@
-date/time         : 2020-08-10, 02:35:01, 406ms
+date/time         : 2020-10-26, 10:23:04, 565ms
 computer name     : DESKTOP-8IGV5DG
 user name         : Dell
 registered owner  : Utilisateur Windows
 operating system  : Windows NT New x64 build 9200
 system language   : French
-system up time    : 14 minutes 53 seconds
-program up time   : 3 seconds
+system up time    : 2 days 11 hours
+program up time   : 1 second
 processors        : 4x Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
-physical memory   : 4476/8098 MB (free/total)
-free disk space   : (C:) 60,80 GB
+physical memory   : 3333/8098 MB (free/total)
+free disk space   : (C:) 27,17 GB
 display mode      : 1366x768, 32 bit
-process id        : $22bc
-allocated memory  : 17,68 MB
+process id        : $1cec
+allocated memory  : 17,64 MB
 command line      : "C:\wamp64\sendmail\sendmail.exe" -t
 executable        : sendmail.exe
-exec. date/time   : 2011-06-18 01:10
+exec. date/time   : 2011-06-18 00:10
 compiled with     : Delphi 2006/07
 madExcept version : 3.0l
-callstack crc     : $fecf9b34, $a92812f5, $a92812f5
+callstack crc     : $1d5da2f6, $4127c0d0, $4127c0d0
 exception number  : 1
-exception class   : EIdSMTPReplyError
-exception message : Username and Password not accepted. Learn more at https://support.google.com/mail/?p=BadCredentials z15sm19161106wrn.89 - gsmtp.
+exception class   : EIdSocketError
+exception message : Socket Error # 10054 Connection reset by peer.
 
-main thread ($f98):
-0045918a +003e sendmail.exe IdReplySMTP     501   +1 TIdReplySMTP.RaiseReplyError
-0043ff28 +0008 sendmail.exe IdTCPConnection 576   +0 TIdTCPConnection.RaiseExceptionForLastCmdResult
-004402f4 +003c sendmail.exe IdTCPConnection 751  +10 TIdTCPConnection.CheckResponse
-0043feba +002a sendmail.exe IdTCPConnection 565   +2 TIdTCPConnection.GetResponse
-0043ff87 +005b sendmail.exe IdTCPConnection 585   +4 TIdTCPConnection.SendCmd
-0044020e +0056 sendmail.exe IdTCPConnection 723   +4 TIdTCPConnection.SendCmd
-0045aa16 +0192 sendmail.exe IdSMTP          341  +40 TIdSMTP.Authenticate
-004b5f81 +10cd sendmail.exe sendmail        822 +340 initialization
-73b662c2 +0022 KERNEL32.DLL                          BaseThreadInitThunk
+main thread ($974):
+00435e23 +0073 sendmail.exe IdStack                         706  +42 TIdStack.RaiseSocketError
+00435daa +0016 sendmail.exe IdStack                         660   +1 TIdStack.RaiseLastSocketError
+0045f2e8 +0100 sendmail.exe IdSSLOpenSSLHeaders           16464  +22 EIdOpenSSLAPISSLError.RaiseExceptionCode
+0045f1d9 +0021 sendmail.exe IdSSLOpenSSLHeaders           16433   +1 EIdOpenSSLAPISSLError.RaiseException
+00466686 +012a sendmail.exe IdSSLOpenSSL                   2668  +17 TIdSSLSocket.Connect
+00465a1c +00dc sendmail.exe IdSSLOpenSSL                   2262  +21 TIdSSLIOHandlerSocketOpenSSL.OpenEncodedConnection
+004655f6 +0062 sendmail.exe IdSSLOpenSSL                   2106   +9 TIdSSLIOHandlerSocketOpenSSL.StartSSL
+00465587 +006b sendmail.exe IdSSLOpenSSL                   2093  +15 TIdSSLIOHandlerSocketOpenSSL.ConnectClient
+00444a9f +0063 sendmail.exe IdIOHandlerSocket               335  +13 TIdIOHandlerSocket.Open
+00465637 +0007 sendmail.exe IdSSLOpenSSL                   2122   +1 TIdSSLIOHandlerSocketOpenSSL.Open
+0044157d +0235 sendmail.exe IdTCPClient                     318  +53 TIdTCPClientCustom.Connect
+00445cc8 +00a4 sendmail.exe IdExplicitTLSClientServerBase   257  +23 TIdExplicitTLSClient.Connect
+0045ab7b +0017 sendmail.exe IdSMTP                          373   +2 TIdSMTP.Connect
+004b5f14 +1060 sendmail.exe sendmail                        808 +326 initialization
+77576357 +0017 KERNEL32.DLL                                          BaseThreadInitThunk
 
-thread $1e68:
-73b662c2 +22 KERNEL32.DLL  BaseThreadInitThunk
+thread $20b4:
+77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
-thread $1dc8:
-73b662c2 +22 KERNEL32.DLL  BaseThreadInitThunk
+thread $2cd4:
+77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
-thread $1178:
-73b662c2 +22 KERNEL32.DLL  BaseThreadInitThunk
+thread $1d70:
+77576357 +17 KERNEL32.DLL  BaseThreadInitThunk
 
 stack dump:
-0019fcc4  8f 91 45 00 de fa ed 0e - 01 00 00 00 07 00 00 00  ..E.............
-0019fcd4  d8 fc 19 00 8f 91 45 00 - 20 cc 3a 02 70 1d 3c 02  ......E...:.p.<.
-0019fce4  00 00 00 00 17 02 00 00 - 08 fd 19 00 f4 fc 19 00  ................
-0019fcf4  48 fd 19 00 c8 4b 40 00 - 08 fd 19 00 34 a5 45 00  H....K@.....4.E.
-0019fd04  00 00 00 00 24 fd 19 00 - 2b ff 43 00 f7 02 44 00  ....$...+.C...D.
-0019fd14  00 00 00 00 90 fd 19 00 - 90 fd 19 00 b0 e6 34 02  ..............4.
-0019fd24  3c fd 19 00 bd fe 43 00 - 00 00 00 00 94 34 46 00  <.....C......4F.
-0019fd34  00 00 00 00 34 a5 45 00 - 68 fd 19 00 8a ff 43 00  ....4.E.h.....C.
-0019fd44  00 00 00 00 78 fd 19 00 - c8 4b 40 00 68 fd 19 00  ....x....K@.h...
-0019fd54  00 00 00 00 eb 00 00 00 - 34 a5 45 00 90 fd 19 00  ........4.E.....
-0019fd64  00 00 00 00 98 fd 19 00 - 14 02 44 00 00 00 00 00  ..........D.....
-0019fd74  00 00 00 00 a4 fd 19 00 - c8 4b 40 00 98 fd 19 00  .........K@.....
-0019fd84  b4 4e 4b 00 b4 4e 4b 00 - 34 a5 45 00 eb 00 19 00  .NK..NK.4.E.....
-0019fd94  00 00 00 00 e0 fd 19 00 - 1b aa 45 00 00 00 00 00  ..........E.....
-0019fda4  b0 fd 19 00 c8 4b 40 00 - e0 fd 19 00 e8 fd 19 00  .....K@.........
-0019fdb4  c8 4b 40 00 e0 fd 19 00 - ff 00 00 00 bf 5a 40 00  .K@..........Z@.
-0019fdc4  00 00 00 00 00 00 00 00 - eb 00 4e 01 00 00 00 00  ..........N.....
-0019fdd4  d0 69 39 02 00 00 00 00 - b0 e6 34 02 80 ff 19 00  .i9.......4.....
-0019fde4  87 5f 4b 00 f4 fd 19 00 - c8 4b 40 00 80 ff 19 00  ._K......K@.....
-0019fdf4  00 fe 19 00 c8 4b 40 00 - 80 ff 19 00 0c fe 19 00  .....K@.........
+0019fb90  28 5e 43 00 de fa ed 0e - 01 00 00 00 07 00 00 00  (^C.............
+0019fba0  a4 fb 19 00 28 5e 43 00 - b8 cd bd 00 ec 28 43 00  ....(^C......(C.
+0019fbb0  c0 3f 46 00 a0 1d bf 00 - e0 fb 19 00 c0 fb 19 00  .?F.............
+0019fbc0  f4 fb 19 00 c8 4b 40 00 - e0 fb 19 00 05 00 00 00  .....K@.........
+0019fbd0  00 00 00 00 00 00 00 00 - 46 27 00 00 00 4f bd 00  ........F'...O..
+0019fbe0  ec fb 19 00 ad 5d 43 00 - 00 4f bd 00 d4 fc 19 00  .....]C..O......
+0019fbf0  ed f2 45 00 f8 fc 19 00 - c8 4b 40 00 d4 fc 19 00  ..E......K@.....
+0019fc00  a8 e8 bf 03 ff ff ff ff - c0 3f 46 00 00 00 00 00  .........?F.....
+0019fc10  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0019fc20  68 43 c0 03 60 00 00 00 - 6d 43 c0 03 a8 e8 bf 03  hC..`...mC......
+0019fc30  75 f2 00 12 a8 e8 bf 03 - 16 00 00 00 08 ee bf 03  u...............
+0019fc40  5b 00 00 00 00 00 00 00 - 01 00 00 00 a8 e8 bf 03  [...............
+0019fc50  16 00 00 00 08 ee bf 03 - a8 e8 bf 03 5b 00 00 00  ............[...
+0019fc60  00 00 00 00 00 00 00 00 - d8 ea bf 03 08 ee bf 03  ................
+0019fc70  5b 00 00 00 6b 43 c0 03 - 40 f3 00 12 00 00 00 00  [...kC..@.......
+0019fc80  16 00 00 00 08 ee bf 03 - 5b 00 00 00 08 ee bf 03  ........[.......
+0019fc90  5d ee bf 03 00 00 00 00 - 8a 86 00 12 a8 e8 bf 03  ]...............
+0019fca0  16 00 00 00 00 00 00 00 - a8 e8 bf 03 00 00 00 00  ................
+0019fcb0  10 11 00 00 08 ee bf 03 - f5 d5 01 12 70 36 bf 03  ............p6..
+0019fcc0  04 00 00 00 00 00 00 00 - ff ff ff ff 00 00 00 00  ................
 
 disassembling:
 [...]
-00459177       call    -$1f480 ($439cfc)      ; IdReply.TIdReply.GetNumericCode
-0045917c       mov     ecx, eax
-0045917e       mov     dl, 1
-00459180       mov     eax, [$458844]
-00459185       call    +$182 ($45930c)        ; IdReplySMTP.EIdSMTPReplyError.CreateError
-0045918a     > call    -$544a3 ($404cec)      ; System.@RaiseExcept
-0045918f 502   xor     eax, eax
-00459191       pop     edx
-00459192       pop     ecx
-00459193       pop     ecx
-00459194       mov     fs:[eax], edx
+00435e13       push    eax
+00435e14       mov     ecx, [ebp-8]
+00435e17       mov     dl, 1
+00435e19       mov     eax, [$4352ac]
+00435e1e       call    -$717 ($43570c)        ; IdStack.EIdSocketError.CreateError
+00435e23     > call    -$3113c ($404cec)      ; System.@RaiseExcept
+00435e28 707   xor     eax, eax
+00435e2a       pop     edx
+00435e2b       pop     ecx
+00435e2c       pop     ecx
+00435e2d       mov     fs:[eax], edx
 [...]

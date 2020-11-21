@@ -41,7 +41,7 @@
 
                     <div class="row">
                         <div class="col-xl-6 col-md-6 ">
-                            <div class="social_media_links">
+                            <!-- <div class="social_media_links">
                                 <a href="#">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
@@ -51,7 +51,7 @@
                                 <a href="#">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
-                            </div>
+                            </div> -->
 
 
                         </div>
@@ -59,8 +59,8 @@
                         <div class="col-xl-6 col-md-6">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i> info@docmed.com</a></li>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> 160160</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>contact@hopitalkhadimrassoul.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-phone"></i>771221709</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -83,28 +83,7 @@
                         <div class="col-xl-6 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
 
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a class="active" href="/">home</a></li>
-                                        <!-- <li><a href="/Department">Department</a></li> -->
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="/blog">blog</a></li>
-                                                <li><a href="/single-blog">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="/elements">elements</a></li>
-                                                <li><a href="/about">about</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/Doctors">Doctors</a></li>
-                                        <li><a href="/contact">Contact</a></li>
-
-                                    </ul>
-
-                                </nav>
+                               
 
 
                             </div>

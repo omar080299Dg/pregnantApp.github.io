@@ -49,15 +49,15 @@ if (isset($_POST['message']) && isset($_POST['name'])) {
         <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-                <h3>Buttonwood, California.</h3>
-                <p>Rosemead, CA 91770</p>
+                <h3>mail de medecin</h3>
+                <p>medein12@gmail.com</p>
             </div>
         </div>
         <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-                <h3>+1 253 565 2365</h3>
-                <p>Mon to Fri 9am to 6pm</p>
+                <h3>mail de votre mari</h3>
+                <p>99omar.niang@gmail.com/p>
             </div>
         </div>
         

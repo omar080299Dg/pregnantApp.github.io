@@ -16,7 +16,7 @@ if ($user->statut == "medecin"): ?>
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="popup-with-form  boxed-btn3" href="#test-form">Make an Appointment</a>
+                                    <a class="popup-with-form  boxed-btn3" href="#test-form">programmer une visite</a>
                                 </div>
                             </div>
                         </div>
@@ -36,10 +36,10 @@ if ($user->statut == "medecin"): ?>
 
 
                                     <?php if(isset($_GET['id'])) {?>
-                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">verifier vos rendez-vous </a>
                                 <?php } 
                                else {?>
-                            <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                            <a href="/checkApp" class="boxed-btn3">verifier vos rendez-vous </a>
                         <?php } ?>
                             </div>
                         </div>
@@ -57,9 +57,9 @@ if ($user->statut == "medecin"): ?>
                                     healthcare service provider to consistently.</p>
 
                                     <?php if(isset($_GET['id'])) {?>
-                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">verifier vos rendez-vous </a>
                                 <?php }  else {?>
-                                    <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                                    <a href="/checkApp" class="boxed-btn3">verifier vos rendez-vous </a>
                         <?php } ?>
 
 
@@ -80,9 +80,9 @@ if ($user->statut == "medecin"): ?>
                                 <p>In healthcare sector, service excellence is the facility of <br> the hospital as
                                     healthcare service provider to consistently.</p>
                                     <?php if(isset($_GET['id'])) {?>
-                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">Check an  Appointment </a>
+                                <a href="/checkApp?id=<?= $_GET['id']?>" class="boxed-btn3">verifier vos rendez-vous</a>
                                 <?php }  else {?>
-                                    <a href="/checkApp" class="boxed-btn3">Check an  Appointment </a>
+                                    <a href="/checkApp" class="boxed-btn3">verifier vos rendez-vous</a>
                         <?php } ?>
                             </div>
                         </div>
@@ -103,8 +103,8 @@ if ($user->statut == "medecin"): ?>
                             <i class="flaticon-electrocardiogram"></i>
                         </div>
                         <h3>Méteo</h3>
-                        <p>Clinical excellence must be the priority for any health care service provider.</p>
-                        <a href="/indexM" class="boxed-btn3-white">check</a>
+                        <p>cliquew pour recevoir les données météorologiaues et le message correspondant</p>
+                        <a href="/indexM" class="boxed-btn3-white">verifier</a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
@@ -112,9 +112,9 @@ if ($user->statut == "medecin"): ?>
                         <div class="icon">
                             <i class="flaticon-emergency-call"></i>
                         </div>
-                        <h3>Emergency </h3>
+                        <h3>Urgence </h3>
                         <p>Clique et envoie un message d'urgence</p>
-                        <a href="/emergency" class="boxed-btn3-white">+10 672 356 3567</a>
+                        <a href="/emergency" class="boxed-btn3-white">envoyer un  mail</a>
                     </div>
                 </div>
                 
@@ -163,7 +163,7 @@ if ($user->statut == "medecin"): ?>
                             <li> <i class="flaticon-right"></i> Duis aute irure dolor in reprehenderit in voluptate.</li>
                             <li> <i class="flaticon-right"></i> Voluptatem quia voluptas sit aspernatur. </li>
                         </ul>
-                        <a href="#" class="boxed-btn3-white-2">Learn More</a>
+                        <a href="/teleconsult" class="boxed-btn3-white-2">télé-consultation</a>
                     </div>
                 </div>
             </div>
@@ -376,11 +376,17 @@ if ($user->statut == "medecin"): ?>
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
                             aria-selected="true">Excellent Services</a>
                             </li>
-
+                            <?php if(isset($_GET['id'])) {?>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                            aria-selected="false">Qualified Doctors</a>
+                                <a class="nav-link" id="profile-tab"   href="/gestation?id=<?= $_GET['id']?>" aria-controls="profile"
+                            aria-selected="false">calendrier de gestations</a>
                             </li>
+                            <?php } else {?>
+                                <li class="nav-item">
+                                <a class="nav-link" id="profile-tab"   href="/gestation" aria-controls="profile"
+                            aria-selected="false">calendrier de gestations</a>
+                            <?php } ?>
+
 
 
                             <li class="nav-item">
@@ -705,9 +711,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- form itself end -->
 
     <?php
+     require "geocode/map.php";
     if($_POST && isset($_GET['id'])){ 
     $pdo = Database::getPDO("pregnantApp");
     $appoitement = new Appointement($pdo);
     $id_pat=$_GET['id'];
     $appoitement->makeAppointement($_POST['nameApp'],$_POST['dateApp'],$id_pat,$_POST['timeApp'],$_POST['descApp']);}
+   
      require "../elements/footer.php";?>

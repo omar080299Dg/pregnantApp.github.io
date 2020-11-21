@@ -29,7 +29,10 @@ $router->map('GET | POST', '/hemoglobine', 'hemoglobine');
 $router->map('GET | POST', '/segmentation', 'segmentation');
 $router->map('GET | POST', '/parasitologie', 'parasitologie');
 $router->map('GET | POST', '/emergency', 'emergency');
+$router->map('GET | POST', '/gestation', 'gestation');
 $router->map('GET', '/passRegeneration', 'passRegeneration');
+$router->map('GET | POST', '/teleconsult', 'teleconsult');
+$router->map('GET | POST', '/showResult', 'showResult');
 $match = $router->match();
 if ($match !== null) {
     if (is_callable($match['target'])) {
@@ -55,6 +58,9 @@ if ($match !== null) {
     elseif ($match['target'] === 'hemobiologie') {
         require "analyse/{$match['target']}.php";
     }
+    elseif ($match['target'] === 'gestation') {
+        require "analyse/{$match['target']}.php";
+    }
     elseif ($match['target'] === 'info') {
         require "{$match['target']}.php";
     }elseif ($match['target'] === 'blog') {
@@ -69,6 +75,14 @@ if ($match !== null) {
  
     }
     elseif ($match['target'] === 'emergency') {
+        require "{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'teleconsult') {
+        require "{$match['target']}.php";
+ 
+    }
+    elseif ($match['target'] === 'showResult') {
         require "{$match['target']}.php";
  
     }
